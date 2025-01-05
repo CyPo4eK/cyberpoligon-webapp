@@ -72,9 +72,10 @@
                             <br><br>
                             <button id="verify-otp-button" class="btn btn-primary">Verify OTP</button>
                         </div>
-                    
+
                     </div>
-                    <br></br>
+                    <br><div id="response-container"> Your IP is: {{ ip }}</div></br>
+                    <br><div id="ip-container"></div></br>
                 </div>
                 <div class="card-footer text-center">
                     <div class="small">
@@ -100,7 +101,7 @@
                 if (data.success && data.otp_required) {
                     $('#login-section').addClass('hidden');
                     $('#otp-section').removeClass('hidden');
-                    alert('OTP sent to your registered contact!');
+                    
                 } else {
                     alert(data.message);
                 }
@@ -109,12 +110,14 @@
 
         $('#verify-otp-button').click(function() {
             const otp = $('#otp').val();
-
+            const responseContainer = document.getElementById('response-container');
+            const ipContainer = document.getElementById('ip-container');
             $.post('/verify-otp/', {
                 otp: otp,
                 csrfmiddlewaretoken: '{{ csrf_token }}'
             }, function(data) {
-                alert(data.message);
+                responseContainer.innerHTML =data.message;
+                ipContainer.innerHTML = "Your IP is:"+data.ip;
                 if (data.success) {
                     window.location.href = '/'; // Redirect after successful login
                 }

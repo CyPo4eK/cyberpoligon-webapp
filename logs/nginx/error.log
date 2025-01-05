@@ -1,0 +1,25 @@
+2024/11/28 08:52:24 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/conf/server.crt"
+2024/11/28 08:52:24 [notice] 1#1: ModSecurity-nginx v1.0.3 (rules loaded inline/local/remote: 0/806/0)
+2024/11/28 08:52:24 [notice] 1#1: libmodsecurity3 version 3.0.13
+2025/01/03 11:03:52 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/conf/server.crt"
+2025/01/03 11:03:52 [notice] 1#1: ModSecurity-nginx v1.0.3 (rules loaded inline/local/remote: 0/806/0)
+2025/01/03 11:03:52 [notice] 1#1: libmodsecurity3 version 3.0.13
+2025/01/03 11:04:41 [error] 134#134: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.1.131, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.2:8000/", host: "192.168.1.129"
+2025/01/03 11:04:41 [error] 134#134: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.1.131, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.18.0.2:8000/favicon.ico", host: "192.168.1.129", referrer: "http://192.168.1.129/"
+2025/01/03 11:05:29 [error] 136#136: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.1.12, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.2:8000/", host: "webapp.cyber"
+2025/01/03 11:05:30 [error] 136#136: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.1.12, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://172.18.0.2:8000/favicon.ico", host: "webapp.cyber", referrer: "http://webapp.cyber/"
+2025/01/03 11:06:10 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/conf/server.crt"
+2025/01/03 11:06:10 [notice] 1#1: ModSecurity-nginx v1.0.3 (rules loaded inline/local/remote: 0/806/0)
+2025/01/03 11:06:10 [notice] 1#1: libmodsecurity3 version 3.0.13
+2025/01/04 13:06:49 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/conf/server.crt"
+2025/01/04 13:06:49 [notice] 1#1: ModSecurity-nginx v1.0.3 (rules loaded inline/local/remote: 0/806/0)
+2025/01/04 13:06:49 [notice] 1#1: libmodsecurity3 version 3.0.13
+2025/01/04 13:20:15 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/conf/server.crt"
+2025/01/04 13:20:15 [notice] 1#1: ModSecurity-nginx v1.0.3 (rules loaded inline/local/remote: 0/806/0)
+2025/01/04 13:20:15 [notice] 1#1: libmodsecurity3 version 3.0.13
+2025/01/04 13:51:46 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/conf/server.crt"
+2025/01/04 13:51:46 [notice] 1#1: ModSecurity-nginx v1.0.3 (rules loaded inline/local/remote: 0/806/0)
+2025/01/04 13:51:46 [notice] 1#1: libmodsecurity3 version 3.0.13
+2025/01/04 13:56:09 [warn] 1#1: "ssl_stapling" ignored, issuer certificate not found for certificate "/etc/nginx/conf/server.crt"
+2025/01/04 13:56:09 [notice] 1#1: ModSecurity-nginx v1.0.3 (rules loaded inline/local/remote: 0/806/0)
+2025/01/04 13:56:09 [notice] 1#1: libmodsecurity3 version 3.0.13

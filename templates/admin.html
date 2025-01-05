@@ -1,0 +1,105 @@
+<style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 70%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+#response-container {
+    margin-top: 20px;
+}</style>
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('ip-form');
+    const responseContainer = document.getElementById('response-container');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const ip = document.getElementById('ip').value;
+        const formData = new URLSearchParams();
+        formData.append('ip', ip);
+        formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+        fetch('/admin', {
+            method: 'POST',
+            body: formData,
+            csrfmiddlewaretoken: '{{ csrf_token }}'
+        })
+        .then(response => response.text())
+        .then(data => {
+            const responseHTML = `<p>Server Response: ${data}</p>`;
+            responseContainer.innerHTML = responseHTML;
+        })
+        .catch(error => console.error('Error:', error));
+    });
+});
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Проверка работоспособности сервиса</h2>
+        <form id="ip-form">
+            <div class="form-group">
+                <label for="ip">IP-адрес:</label>
+                <textarea id="ip" name="ip" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <div id="response-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
